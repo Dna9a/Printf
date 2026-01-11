@@ -6,7 +6,7 @@
 /*   By: younux <younux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:50:24 by yoabied           #+#    #+#             */
-/*   Updated: 2026/01/10 14:27:09 by younux           ###   ########.fr       */
+/*   Updated: 2026/01/11 00:35:16 by younux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,25 @@ int	type_routeur(char const type, va_list a)
 		return (ft_putchar(va_arg(a, int)));
 	else if (type == 's')
 		return (ft_putstr(va_arg(a, char *)));
-	else if (type ==
+	else if (type == 'd'|| type == 'i')
 		return (ft_putnbr(va_arg(a, int)));
-	else if (type ==
-		return (ft_putnbr(va_arg(a, int)));
-	else if (type ==
-		return (ft_putnbr(va_arg(a, int)));
-	else if (type ==
-		return (ft_putnbr(va_arg(a, int)));
-	else if (type ==
-		return (ft_putnbr(va_arg(a, int)));
+	else if (type == 'u')
+		return (ft_putunsigned_nbr(va_arg(a, int)));
+	
+	
+	else if (type ==  'x')
+		return ((va_arg(a,)));
+
+
+	else if (type ==  'X')
+		return ((va_arg(a,)));
+		
+
+	else if (type ==  'x')
+		return ((va_arg(a,)));
+
 	else
-		return (ft_putchar(type));
+		return (ft_putchar(type));	
 }
 
 int	ft_printf(const char *str, ...)

@@ -6,7 +6,7 @@
 /*   By: younux <younux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:50:24 by yoabied           #+#    #+#             */
-/*   Updated: 2026/01/11 00:35:16 by younux           ###   ########.fr       */
+/*   Updated: 2026/01/12 22:53:46 by younux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,24 @@ int	type_routeur(char const type, va_list a)
 		return (ft_putchar(va_arg(a, int)));
 	else if (type == 's')
 		return (ft_putstr(va_arg(a, char *)));
-	else if (type == 'd'|| type == 'i')
+	else if (type == 'p')
+		return (ft_putaddress(va_arg(a, void *)));
+	else if (type == 'd' || type == 'i')
 		return (ft_putnbr(va_arg(a, int)));
 	else if (type == 'u')
-		return (ft_putunsigned_nbr(va_arg(a, int)));
-	
-	
-	else if (type ==  'x')
-		return ((va_arg(a,)));
-
-
-	else if (type ==  'X')
-		return ((va_arg(a,)));
-		
-
-	else if (type ==  'x')
-		return ((va_arg(a,)));
-
+		return (ft_putnbr_unsigned(va_arg(a, unsigned int)));
+	else if (type == 'x')
+		return (ft_putnbr_hex_xs(va_arg(a, unsigned long)));
+	else if (type == 'X')
+		return (ft_putnbr_hex_xl(va_arg(a, unsigned long)));
 	else
-		return (ft_putchar(type));	
+		return (ft_putchar(type));
 }
 
 int	ft_printf(const char *str, ...)
 {
-	va_list	args;
-	int		printed;
+	va_list args;
+	int printed;
 	int i;
 
 	va_start(args, str);
@@ -56,7 +49,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 			printed += ft_putchar(str[i]);
-			i++;
+		i++;
 	}
 	va_end(args);
 	return (printed);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_put_num.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: younux <younux@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/13 00:42:19 by younux            #+#    #+#             */
+/*   Updated: 2026/01/13 00:42:20 by younux           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_putnbr_hex_xs(unsigned long nbr)
@@ -15,6 +27,7 @@ int	ft_putnbr_hex_xs(unsigned long nbr)
 		count += ft_putchar(base[nbr]);
 	return (count);
 }
+
 int	ft_putnbr_hex_xl(unsigned long nbr)
 {
 	const char	*base = "0123456789ABCDEF";

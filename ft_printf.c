@@ -6,7 +6,7 @@
 /*   By: younux <younux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:50:24 by yoabied           #+#    #+#             */
-/*   Updated: 2026/01/12 22:53:46 by younux           ###   ########.fr       */
+/*   Updated: 2026/01/13 00:41:34 by younux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	type_routeur(char const type, va_list a)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list args;
-	int printed;
-	int i;
+	va_list	args;
+	int		printed;
+	int		i;
 
 	va_start(args, str);
 	i = 0;

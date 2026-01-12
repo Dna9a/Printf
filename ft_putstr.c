@@ -6,7 +6,7 @@
 /*   By: younux <younux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 00:59:06 by yoabied           #+#    #+#             */
-/*   Updated: 2026/01/12 22:53:25 by younux           ###   ########.fr       */
+/*   Updated: 2026/01/13 00:42:13 by younux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
 int	ft_putstr(char *s)
 {
 	int	i;

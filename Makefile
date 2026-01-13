@@ -21,6 +21,6 @@ fclean: clean
 
 re: fclean all
 
-res: all           # to delete
-	cc main.c libftprintf.a
-	./a.out
+# res: all           # to delete
+# 	cc main.c libftprintf.a
+# 	./a.out

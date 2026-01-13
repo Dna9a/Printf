@@ -6,7 +6,7 @@
 /*   By: younux <younux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 00:42:19 by younux            #+#    #+#             */
-/*   Updated: 2026/01/13 00:42:20 by younux           ###   ########.fr       */
+/*   Updated: 2026/01/13 12:37:57 by younux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	ft_putaddress(void *ptr)
 	count = 0;
 	if (ptr == NULL)
 	{
-		count += ft_putstr("(null)");
+		count += ft_putstr("0x0");
 		return (count);
 	}
 	count += ft_putstr("0x");

@@ -6,7 +6,7 @@
 /*   By: younux <younux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 00:59:06 by yoabied           #+#    #+#             */
-/*   Updated: 2026/01/13 00:42:13 by younux           ###   ########.fr       */
+/*   Updated: 2026/01/13 12:36:27 by younux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_putstr(char *s)
 	int	i;
 
 	i = 0;
+	if (s == NULL)
+		return (ft_putstr("(null)"));
 	while (s[i] != '\0')
 	{
 		ft_putchar(s[i]);

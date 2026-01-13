@@ -6,13 +6,67 @@
 /*   By: younux <younux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 00:42:19 by younux            #+#    #+#             */
-/*   Updated: 2026/01/13 12:37:57 by younux           ###   ########.fr       */
+/*   Updated: 2026/01/13 15:34:56 by younux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_hex_xs(unsigned long nbr)
+// int	ft_putnbr_hex_xs(unsigned int nbr)
+// {
+// 	const char	*base = "0123456789abcdef";
+// 	int			count;
+
+// 	count = 0;
+// 	if (nbr >= 16)
+// 	{
+// 		count += ft_putnbr_hex_xs(nbr / 16);
+// 		count += ft_putnbr_hex_xs(nbr % 16);
+// 	}
+// 	else
+// 		count += ft_putchar(base[nbr]);
+// 	return (count);
+// }
+
+// int	ft_putnbr_hex_xl(unsigned int nbr)
+// {
+// 	const char	*base = "0123456789ABCDEF";
+// 	int			count;
+
+// 	count = 0;
+// 	if (nbr >= 16)
+// 	{
+// 		count += ft_putnbr_hex_xl(nbr / 16);
+// 		count += ft_putnbr_hex_xl(nbr % 16);
+// 	}
+// 	else
+// 		count += ft_putchar(base[nbr]);
+// 	return (count);
+// }
+
+int	ft_putnbr_hex(unsigned int nbr, char type)
+{
+	const char	*base;
+	int			count;
+
+	count = 0;
+	if (type != 'x' && type != 'X')
+		return (0);
+	if (type == 'X')
+		base = "0123456789ABCDEF";
+	if (type == 'x')
+		base = "0123456789abcdef";
+	if (nbr >= 16)
+	{
+		count += ft_putnbr_hex(nbr / 16, type);
+		count += ft_putnbr_hex(nbr % 16, type);
+	}
+	else
+		count += ft_putchar(base[nbr]);
+	return (count);
+}
+
+int	longhex_for_addr(unsigned long nbr)
 {
 	const char	*base = "0123456789abcdef";
 	int			count;
@@ -20,24 +74,8 @@ int	ft_putnbr_hex_xs(unsigned long nbr)
 	count = 0;
 	if (nbr >= 16)
 	{
-		count += ft_putnbr_hex_xs(nbr / 16);
-		count += ft_putnbr_hex_xs(nbr % 16);
-	}
-	else
-		count += ft_putchar(base[nbr]);
-	return (count);
-}
-
-int	ft_putnbr_hex_xl(unsigned long nbr)
-{
-	const char	*base = "0123456789ABCDEF";
-	int			count;
-
-	count = 0;
-	if (nbr >= 16)
-	{
-		count += ft_putnbr_hex_xl(nbr / 16);
-		count += ft_putnbr_hex_xl(nbr % 16);
+		count += longhex_for_addr(nbr / 16);
+		count += longhex_for_addr(nbr % 16);
 	}
 	else
 		count += ft_putchar(base[nbr]);
@@ -90,6 +128,6 @@ int	ft_putaddress(void *ptr)
 		return (count);
 	}
 	count += ft_putstr("0x");
-	count += ft_putnbr_hex_xs((unsigned long)ptr);
+	count += longhex_for_addr((unsigned long)ptr);
 	return (count);
 }

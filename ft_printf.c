@@ -6,7 +6,7 @@
 /*   By: younux <younux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:50:24 by yoabied           #+#    #+#             */
-/*   Updated: 2026/01/13 12:37:12 by younux           ###   ########.fr       */
+/*   Updated: 2026/01/13 15:30:03 by younux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ int	type_routeur(char const type, va_list a)
 		return (ft_putnbr(va_arg(a, int)));
 	else if (type == 'u')
 		return (ft_putnbr_unsigned(va_arg(a, unsigned int)));
-	else if (type == 'x')
-		return (ft_putnbr_hex_xs(va_arg(a, unsigned long)));
-	else if (type == 'X')
-		return (ft_putnbr_hex_xl(va_arg(a, unsigned long)));
+	else if (type == 'x' || type == 'X')
+		return (ft_putnbr_hex(va_arg(a, unsigned int), type));
 	else
 		return (ft_putchar(type));
 }

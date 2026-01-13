@@ -1,4 +1,4 @@
-s## *This project has been created as part of the 42 curriculum by yoabied.* 
+## *This project has been created as part of the 42 curriculum by yoabied.* 
 <!-- 9sem -->
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <span style="font-size: 45px;">📄</span>
@@ -7,19 +7,20 @@ s## *This project has been created as part of the 42 curriculum by yoabied.*
 <!-- # Description-->
 
 # Description
- This project consists of implementing the same exact behavior of the printf function,  
 
+```This project consists of implementing the same exact behavior of the printf function, with some specific option if we mention the mandatory part , other than that the main goal of this project is to basicaly learn how to handle variadic functions,```
 
+## implementing the following conversions:
 
-
-
-
-
-
-<!--which reads a single line from a given file descriptor.
-The function must handle any valid file descriptor and return NULL if the descriptor is invalid or if an error occurs.
-On success, it returns the line read from the file descriptor, including the terminating newline character if it exists. -->
-
+#### • %c A single character.
+#### • %s A string (as defined by the common C convention).
+#### • %p A void * pointer argument printed in hexadecimal format.
+#### • %d A decimal (base 10) number.
+#### • %i An integer in base 10.
+#### • %u An unsigned decimal (base 10) number.
+#### • %x A number in hexadecimal (base 16) lowercase format.
+#### • %X A number in hexadecimal (base 16) uppercase format.
+#### • %% A percent sign.
 
  - - - - - - - - - - - - - - - - - -
 ## Function Prototype
@@ -28,17 +29,7 @@ On success, it returns the line read from the file descriptor, including the ter
 int ft_printf(const char *, ...);
 ```
 ### Parameters
-<!-- - `fd`: file descriptor for reading -->
-You have to implement the following conversions:
-## • %c Prints a single character.
-## • %s Prints a string (as defined by the common C convention).
-## • %p The void * pointer argument has to be printed in hexadecimal format.
-## • %d Prints a decimal (base 10) number.
-## • %i Prints an integer in base 10.
-## • %u Prints an unsigned decimal (base 10) number.
-## • %x Prints a number in hexadecimal (base 16) lowercase format.
-## • %X Prints a number in hexadecimal (base 16) uppercase format.
-## • %% Prints a percent sign.
+
 
 
 ### Return Value
@@ -49,15 +40,24 @@ You have to implement the following conversions:
 
 <!-- Instructions -->
 # Instructions
+
+## Compilation
+The project includes a Makefile that compiles the source files with the flags `-Wall`, `-Wextra`, and `-Werror`. To create the library, run:
+```c
+make
+```
+This command uses the `ar` tool to generate the required library file `libftprintf.a` at the root of the repository.
+
+## Makefile Rules
+#### • `all`: Compiles the library.
+#### • ``clean``: Removes object files.
+#### • ``fclean``: Removes object files and the libftprintf.a library.
+#### • ``re``: Performs a full re-compilation.
 ## Usage
-#### how to use Printf 
-<!-- 1. Include Header: Ensure that the get_next_line.h or get_next_line_bonus.h header is included in your project.
-
-2. Call Function: Call get_next_line(fd) in a loop to retrieve lines until NULL is returned (indicating end-of-file or an error). -->
-
+#### how to use ``ft_printf`` 
 
 ```c
-#include "printf.h"
+#include "ft_printf.h"
 #include <stdio.h> 
 
 int	main(void)
@@ -73,23 +73,6 @@ int	main(void)
 	return (0);
 }
 ```
-
-## Makefile 
-<!-- During the process of testing my Printf, I made a small makefile tester so to test my function just with a make command, that's by throwing `ps -ef` output on another file called `file.txt` -->
-
- - - - - - - - - - - - - - - - - - -
-
-```Make
-
-
-
-
-
-
-
-
-```
- - - - - - - - - - - - - - - - - - -
 
 <!-- Resources -->
 # Resources 

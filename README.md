@@ -97,26 +97,33 @@ gcc -Wall -Wextra -Werror main.c libftprintf.a -o program
 # The Algorithm
 
 ## Overview
+
+```
 While building my ft_printf, I took the approach of creating multiple helper functions to achieve the project's goals.
+```
+### **Main Functions**
+#### - `ft_printf`: main function that processes the format string and arguments
+#### - `type_routeur`: routes to the correct printing function based on the format specifier
 
-### 1. Format String Parsing
-The function iterates through the format string character by character, printing normal characters directly.
+### **Helper Functions**
 
-### 2. Type Identification
-When a format specifier is found, the function identifies the conversion type (c, s, p, d, i, u, x, X, %).
+#### The following helper functions were implemented to handle specific tasks as : 
+#### - `ft_putnbr`: prints a signed int in decimal (handles negatives + INT_MIN) responsible of `%d` and `%i`
+#### - `ft_putnbr_unsigned`: prints an unsigned int in decimal responsible of `%u`
+#### - `ft_putnbr_hex`: prints an unsigned int in hexadecimal ('x' or 'X') responsible of `%x` and `%X`
+#### - `longhex_for_addr`: prints an unsigned long in lowercase hex (used for `%p`)
+#### - `ft_putaddress`: prints "0x" + the pointer value (or "0x0" if NULL) responsible of `%p`
+#### - `ft_putstr`: prints a string (handles NULL) responsible of `%s`
+#### - `ft_putchar`: prints a single character responsible of `%c`
 
-### 3. Argument Extraction
-Using va_arg, the function extracts the corresponding argument from the variadic argument list based on the identified type.
-
-### 4. Output Generation
-Helper functions handle the conversion and output of each data type, returning the number of characters printed.
-
-## Algorithm Flow
-1. **Initialize va_list**: Set up variadic argument handling with va_start
-2. **Parse format string**: Loop through each character in `format`
-3. **Handle regular characters**: Print them directly and increment a counter
-4. **Process format specifiers**: Call `type_routeur()` to choose the right helper
-5. **Clean up**: Use va_end to properly close the variadic argument list and return total character count
+## ** Algorithm Flow**
+1. **Start**: call `ft_printf(format, ...)`
+2. **Init**: set up `va_list` (`va_start`)
+3. **Parse**: walk through `format` and detect `%` specifiers
+4. **Dispatch**: call `type_routeur(specifier, ap)`
+5. **Print**: helper does `va_arg` + writes output
+6. **Count**: accumulate total printed characters
+7. **Finish**: `va_end` and return the count
 
 <!-- ➠ Additional sections may be required depending on the project (e.g., usage
 examples, feature list, technical choices, etc.).
@@ -124,7 +131,6 @@ Any required additions will be explicitly listed below.
 • A detailed explanation and justification of the chosen algorithm and data structure
 must also be included. -->
 ## Technical Notes
-
 ### Variadic Argument Handling
 
 ```c
@@ -155,8 +161,8 @@ char    ──────────► int
 short   ──────────► int
 float   ──────────► double
 
-unsigned char  ───► unsigned int
-unsigned short ───► unsigned int
+unsigned char  ───►  int
+unsigned short ───►  int
 ```
 
 This is why we use `int` in `va_arg()` even when expecting a `char`.

@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by yoabied.* 
+## *This project has been created as part of the 42 curriculum by yoabied.* 
 <!-- 9sem -->
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <span style="font-size: 45px;">📄</span>
@@ -10,12 +10,10 @@
 brief overview. -->
 # Description
 ```
-This project consists of re-implementing a subset of printf.
-The main goal is to practice variadic functions (va_list / va_start / va_arg / va_end)
-and printing different data types to standard output.
+This project consists of implementing the same exact behavior of the printf function, with some specific option if we mention the mandatory part, other than that the main goal of this project is to basicaly learn how to handle variadic functions (va_list / va_start / va_arg / va_end) ,
 ```
 
-## Supported conversions
+## Mandatory   conversions
 
 | Specifier | Meaning |
 |----------|---------|

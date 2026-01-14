@@ -1,5 +1,4 @@
-*This project has been created as part
- of the 42 curriculum by yoabied.* 
+*This project has been created as part of the 42 curriculum by yoabied.* 
 <!-- 9sem -->
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <span style="font-size: 45px;">📄</span>
@@ -87,9 +86,14 @@ gcc -Wall -Wextra -Werror main.c libftprintf.a -o program
 <!-- Resources -->
 <!-- • A “Resources” section listing classic references related to the topic (documentation, articles, tutorials, etc.), as well as a description of how AI was used — specifying for which tasks and which parts of the project. -->
 # Resources 
+## References
+
 - **[Variadic Functions Guide](https://trp-directories.vercel.app/guides/variadic-functions-in-c-complete-guide-to-valist-vastart-vaarg-vaend/)**
 - **[Peer's Miro Board](https://miro.com/app/board/uXjVN-42a5k=/)**
 - **[GeeksforGeeks - Variadic Functions](https://www.geeksforgeeks.org/c/variadic-functions-in-c/)**
+- **[Microsoft Docs - Variadic Functions](https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/va-arg-va-copy-va-end-va-start?view=msvc-170)**
+## AI Usage
+- **ChatGPT** was used to redefine terms such as promotions and variadic functions to ensure clarity and accuracy eather during the making of my Ft_printf project or while writing this README file.
 
 <!-- Additional sections may be required depending on the project (e.g., usage examples, feature list, technical choices, etc.). -->
 # The Algorithm
@@ -143,7 +147,7 @@ typedef struct {
 **Storage:**
 - Arguments are stored in registers when possible (up to 48 bytes for general purpose, 128 bytes for floating point)
 - Additional arguments overflow to the stack
-
+--------------------------------------------------------------
 ### Type Promotion in Variadic Functions
 
 When passing arguments to variadic functions, C automatically promotes certain types:

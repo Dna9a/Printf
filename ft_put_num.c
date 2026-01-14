@@ -6,43 +6,11 @@
 /*   By: younux <younux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 00:42:19 by younux            #+#    #+#             */
-/*   Updated: 2026/01/13 15:34:56 by younux           ###   ########.fr       */
+/*   Updated: 2026/01/14 20:43:15 by younux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-// int	ft_putnbr_hex_xs(unsigned int nbr)
-// {
-// 	const char	*base = "0123456789abcdef";
-// 	int			count;
-
-// 	count = 0;
-// 	if (nbr >= 16)
-// 	{
-// 		count += ft_putnbr_hex_xs(nbr / 16);
-// 		count += ft_putnbr_hex_xs(nbr % 16);
-// 	}
-// 	else
-// 		count += ft_putchar(base[nbr]);
-// 	return (count);
-// }
-
-// int	ft_putnbr_hex_xl(unsigned int nbr)
-// {
-// 	const char	*base = "0123456789ABCDEF";
-// 	int			count;
-
-// 	count = 0;
-// 	if (nbr >= 16)
-// 	{
-// 		count += ft_putnbr_hex_xl(nbr / 16);
-// 		count += ft_putnbr_hex_xl(nbr % 16);
-// 	}
-// 	else
-// 		count += ft_putchar(base[nbr]);
-// 	return (count);
-// }
 
 int	ft_putnbr_hex(unsigned int nbr, char type)
 {

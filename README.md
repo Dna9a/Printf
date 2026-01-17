@@ -39,7 +39,7 @@ int ft_printf(const char *, ...);
 ### Parameters
 
 - `const char *format`: the format string
-- `...`: a variable number of arguments (variadic)
+- `...`: a variable number of arguments (Ellipsis)
 
 ### Return Value
 
